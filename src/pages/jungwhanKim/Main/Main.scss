@@ -1,0 +1,560 @@
+@import '../../../styles/mixin';
+
+.main {
+  @include justifyCenter;
+
+  .container {
+    @include justifyCenter;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  // 우측 상단 모달용 스타일시트
+  .modal {
+    display: block;
+    z-index: 100;
+
+    .modal_box {
+      position: absolute;
+      width: 200px;
+      transform: translateX(-90%) translateY(9.5%);
+      border-radius: 5px;
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .modal-first-section {
+      padding: 16px;
+    }
+
+    .modal-second-section {
+      padding: 16px;
+      border-top: 0.5px solid rgb(208, 208, 208);
+    }
+
+    .modal-row {
+      @include alignCenter;
+      padding: 4px 0;
+    }
+
+    .modal-icon-profile {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-image: url('../../../assets/jungwhanKim/modal-profile.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .modal-icon-saved {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-image: url('../../../assets/jungwhanKim/bookmark.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 90%;
+    }
+
+    .modal-icon-settings {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-image: url('../../../assets/jungwhanKim/setting.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .modal-text {
+      margin-left: 12px;
+      font-size: 14px;
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    padding-top: 2px;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    background-color: #ffffff;
+    @include flexCenter;
+  }
+
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1280px;
+  }
+
+  .align-center {
+    @include alignCenter;
+  }
+
+  .wecode-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    border-radius: 5px;
+    background-image: url('../../../assets/jungwhanKim/wecode-logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .text-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: -1px;
+  }
+
+  .results {
+    position: absolute;
+    top: 100%;
+    width: 227px;
+    padding: 24px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+
+  .searchResultWrapper {
+    @include alignCenter;
+    padding: 6px 0;
+  }
+
+  .searchResultImg {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-repeat: 'no-repeat';
+    background-position: center;
+    background-size: cover;
+  }
+
+  .searchResultId {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .search-wrapper {
+    @include alignCenter;
+  }
+
+  .search-wrapper input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .explore {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+  }
+
+  .heart {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+  }
+
+  .my {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background-image: url('../../../assets/jungwhanKim/profile_hat.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .my.active {
+    outline: 2px solid black;
+  }
+
+  .feed-container {
+    margin-top: 60px;
+  }
+
+  @media (min-width: 320px) {
+    .feed-container {
+      display: block;
+    }
+    .main-right {
+      width: 100%;
+
+      .top-right-profile {
+        display: none;
+      }
+    }
+    .box {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 760px) {
+    .feed-container {
+      display: block;
+    }
+    .box {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .feed-container {
+      display: flex;
+    }
+    .main-right {
+      margin-left: 36px;
+      padding: 24px;
+
+      .top-right-profile {
+        @include alignCenter;
+      }
+    }
+    .box {
+      width: 400px;
+    }
+  }
+
+  .article {
+    border-radius: 12px;
+    background-color: #ffffff;
+  }
+
+  .article-top {
+    justify-content: space-between;
+    padding: 24px 8px;
+    @include alignCenter;
+  }
+
+  .account-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url('https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .account-name {
+    margin-left: 12px;
+  }
+
+  .account-name-main {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .blue-check {
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    background-image: url('../../../assets/jungwhanKim/blue_check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .account-name-sub {
+    margin-top: 4px;
+    color: #7e7e7e;
+    font-size: 12px;
+  }
+
+  .article-menu {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    background-image: url('https://cdn.icon-icons.com/icons2/1659/PNG/512/3844444-dot-menu-more-option_110318.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .post-img {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    background-image: url('https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa5edc5c3-6d35-464a-bf68-4543d6982816%2FH53A7073.jpg?id=00fd33ac-3dbf-4029-af21-afd6aa6fa4a4&table=block&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=2000&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .third-row {
+    justify-content: space-between;
+    padding: 16px 0;
+    @include alignCenter;
+  }
+
+  .like {
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .like-clicked {
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+    background-image: url('https://www.pngitem.com/pimgs/m/522-5229528_transparent-background-instagram-heart-icon-hd-png-download.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .comment-img {
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+    background-image: url('../../../assets/jungwhanKim/instagram-comment-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .share-img {
+    width: 26px;
+    height: 26px;
+    background-image: url('../../../assets/jungwhanKim/instagram-share-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .save-img {
+    width: 24px;
+    height: 26px;
+    background-image: url('../../../assets/jungwhanKim/PikPng.com_ig-icon-png_1255467.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .account-pic-sm {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-image: url('https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .post-status-msg {
+    padding-left: 8px;
+    font-size: 14px;
+  }
+
+  .bolded {
+    font-weight: 700;
+  }
+
+  .comments {
+    width: 600px;
+    padding: 16px 0;
+  }
+
+  .dummy-comment {
+    margin-top: 16px;
+  }
+
+  .dummy-comment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .single-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+
+    font-size: 14px;
+  }
+
+  .see-more {
+    margin-left: 5px;
+    opacity: 0.6;
+  }
+
+  .comment-id {
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .comment-like {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    opacity: 0.5;
+    background-image: url('../../../assets/jungwhanKim/heart-inactive.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .comment-like-clicked {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    background-image: url('https://www.pngitem.com/pimgs/m/522-5229528_transparent-background-instagram-heart-icon-hd-png-download.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .deleteBtn {
+    transition: 0.3s;
+    color: rgb(145, 145, 145);
+    font-size: 12px;
+  }
+
+  .deleteBtn:hover {
+    color: rgb(243, 17, 126);
+  }
+
+  .time-posted {
+    opacity: 0.5;
+    /* padding: 0 24px; */
+    font-size: 12px;
+  }
+
+  .comment-input {
+    position: relative;
+    padding: 16px 0;
+  }
+
+  .comment-input input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 4px;
+  }
+
+  .add-button {
+    position: absolute;
+    z-index: 10;
+    top: 37%;
+    right: -20px;
+    padding: 4px 8px;
+    transform: translateX(-80%);
+    transition: 0.3s;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #1e90ff;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .add-button:hover {
+    background-color: #1e90ff;
+    color: white;
+  }
+
+  .right-account-pic {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: url('../../../assets/jungwhanKim/profile_hat.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .box {
+    margin-top: 16px;
+    margin-top: 36px;
+    border-radius: 12px;
+    background-color: #ffffff;
+  }
+
+  .stories-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .stories-header {
+    opacity: 0.6;
+    font-size: 16px;
+  }
+
+  .stories-see-all {
+    font-size: 13px;
+  }
+
+  .story-component {
+    padding: 8px 0;
+  }
+
+  .gradient {
+    width: 36px;
+    height: 36px;
+    padding: 2px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #0066ff, #bc84e1);
+  }
+
+  .account-pic-story {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url('https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .recomment-wrapper {
+    @include alignCenter;
+    justify-content: space-between;
+  }
+
+  .recommend-component {
+    padding: 10px 0;
+  }
+
+  .follow-text {
+    color: #405de6;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
