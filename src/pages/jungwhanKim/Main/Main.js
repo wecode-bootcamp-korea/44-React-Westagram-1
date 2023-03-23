@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Comment from './Comment/Comment';
 import './Main.scss';
 
 const Main = () => {
@@ -118,8 +119,8 @@ const Main = () => {
                 style={{ display: searchInput ? 'block' : 'none' }}
               >
                 {matchingUsers.length > 0 ? (
-                  matchingUsers.map(item => (
-                    <div className="searchResultWrapper">
+                  matchingUsers.map((item, i) => (
+                    <div key={i} className="searchResultWrapper">
                       <div
                         className="searchResultImg"
                         style={{ backgroundImage: `url(${item[1]})` }}
@@ -222,32 +223,13 @@ const Main = () => {
 
                 <div className="comments">
                   {/* <!--댓글들이 달릴 곳--> */}
-
-                  {/* 맵핑되어 렌더될 각 댓글들 */}
                   {comments.map((comment, i) => (
-                    <div key={i} className="single-comment">
-                      <div className="align-center">
-                        <div className="comment-id">ggkim0614</div>
-                        <div className="comment-content">{comments[i]}</div>
-                      </div>
-                      <div className="align-center">
-                        <div
-                          // className={ postLiked[i] ? 'comment-like-clicked' : 'comment-like'}
-                          // onClick={() => handleLike(i)}
-                          onClick={() => handleLike(i)}
-                          className="comment-like"
-                        />
-                        <div
-                          onClick={() => handleRemove(i)}
-                          className="deleteBtn"
-                        >
-                          삭제
-                        </div>
-                      </div>
-                    </div>
+                    <Comment
+                      key={i}
+                      content={comments[i]}
+                      handleRemove={() => handleRemove(i)}
+                    />
                   ))}
-
-                  {/* 컴포넌트화될 comment 컴포넌트! */}
                 </div>
                 <div className="time-posted">54분 전</div>
                 <div className="comment-input">

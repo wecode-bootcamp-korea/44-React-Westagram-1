@@ -387,65 +387,15 @@
   }
 
   .dummy-comment {
-    margin-top: 16px;
-  }
-
-  .dummy-comment {
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
-    font-size: 14px;
-  }
-
-  .single-comment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px 0;
-
     font-size: 14px;
   }
 
   .see-more {
     margin-left: 5px;
     opacity: 0.6;
-  }
-
-  .comment-id {
-    margin-right: 8px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .comment-like {
-    width: 16px;
-    height: 16px;
-    margin-right: 16px;
-    opacity: 0.5;
-    background-image: url('../../../assets/jungwhanKim/heart-inactive.jpeg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .comment-like-clicked {
-    width: 16px;
-    height: 16px;
-    margin-right: 16px;
-    background-image: url('https://www.pngitem.com/pimgs/m/522-5229528_transparent-background-instagram-heart-icon-hd-png-download.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .deleteBtn {
-    transition: 0.3s;
-    color: rgb(145, 145, 145);
-    font-size: 12px;
-  }
-
-  .deleteBtn:hover {
-    color: rgb(243, 17, 126);
   }
 
   .time-posted {
