@@ -7,6 +7,19 @@ import './Login.scss';
 const Login = () => {
   const navigate = useNavigate();
 
+  let [userIdValue, setIdInput] = useState('');
+  let [userPwValue, setPwInput] = useState('');
+  // console.log(userIdValue);
+  // console.log(userPwValue);
+
+  const handleId = e => {
+    setIdInput(e.target.value);
+  };
+
+  const handlePw = e => {
+    setPwInput(e.target.value);
+  };
+
   //   if (
   //     userId.value.length > 0 &&
   //     userId.value.indexOf('@') !== -1 &&
@@ -26,25 +39,12 @@ const Login = () => {
 
   let [act, setAct] = useState(false);
 
-  let [userIdValue, setIdInput] = useState('');
-  let [userPwValue, setPwInput] = useState('');
-  // console.log(userIdValue);
-  // console.log(userPwValue);
-
   const actPassedLogin = () => {
     return userIdValue.includes('@') &&
       userPwValue.length >= 5 &&
       userPwValue.length > 0
       ? setAct(true)
       : setAct(false);
-  };
-
-  const handleId = e => {
-    setIdInput(e.target.value);
-  };
-
-  const handlePw = e => {
-    setPwInput(e.target.value);
   };
 
   return (
