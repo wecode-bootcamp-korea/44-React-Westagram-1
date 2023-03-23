@@ -1,0 +1,373 @@
+div {
+  * {
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Lobster';
+    src: url('../../../assets/sunyoungChoi/font/Lobster/Lobster-Regular.ttf')
+      format('truetype');
+  }
+
+  body {
+    margin: 0;
+    background-color: #f5f8fa;
+  }
+
+  .menu-bar-wrap,
+  .feeds-contents-wrap,
+  .main-right-top,
+  .main-right-bottom {
+    background-color: white;
+  }
+
+  .menu-bar-wrap {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+  }
+
+  .logo-box {
+    position: relative;
+  }
+
+  .logo {
+    width: 120px;
+    height: 30px;
+    margin: 0px 0px 0px 40px;
+    border-left: 2px solid gray;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: 'Lobster';
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .fa-instagram {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+
+  .search-box {
+    position: relative;
+  }
+
+  .fa-magnifying-glass {
+    position: absolute;
+    top: 10px;
+    left: 71px;
+    color: gray;
+    /* width: 15px;
+    height: 15px; */
+    font-size: 10px;
+  }
+
+  .search-input {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .inner-menu {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+
+    width: 100px;
+    height: 30px;
+  }
+
+  .inner-menu img {
+    width: 20px;
+    height: 20px;
+
+    margin: auto;
+  }
+
+  .main {
+    /* width: 50vw;
+    height: 50vh;
+    background-color: rgb(98%, 98%, 98%); */
+    display: flex;
+    justify-content: center;
+  }
+
+  .feeds {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .feeds-contents-wrap {
+    width: 500px;
+    height: auto;
+    margin: 40px 10px 0 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .dot {
+    margin: 5px 10px;
+  }
+
+  .feeds-top {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 50px;
+
+    padding-top: 3px;
+    /* margin: 10px auto 10px 10px; */
+  }
+
+  .user-img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 70%;
+  }
+
+  .user-name {
+    width: 150px;
+    height: 18px;
+    margin: auto auto auto 5px;
+    font-size: 13px;
+  }
+
+  .user-using-time {
+    width: 150px;
+    height: 18px;
+    margin: 0 5px;
+    color: gray;
+    font-size: 13px;
+  }
+
+  .main-right-profile .user-img {
+    margin: 5px;
+  }
+  .main-right-profile .user-name,
+  .profile .user-name {
+    margin: auto auto auto 5px;
+  }
+
+  .feeds-contents {
+    width: 100%;
+    height: 480px;
+    margin: 5px auto;
+  }
+
+  .contents-btn button {
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+  }
+
+  .contents-btn button i {
+    margin: 5px;
+    font-size: 20px;
+  }
+
+  .contents-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contents-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-right {
+    width: 250px;
+    height: 550px;
+
+    margin: 40px 0 0 10px;
+  }
+
+  .main-right-profile {
+    display: flex;
+    justify-content: flex-start;
+    /* border: 1px solid gray;
+    border-radius: 5px; */
+    width: 100%;
+    height: 50px;
+    margin: 0 0 5px 0;
+  }
+
+  .profile {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    margin: 7px auto;
+  }
+
+  .profile .user-img {
+    margin: 5px;
+  }
+
+  .pro-user-mini-wrap {
+    position: relative;
+    width: 130px;
+  }
+
+  .pro-user-mini-wrap .user-name,
+  .pro-user-mini-wrap .user-using-time {
+    width: 100%;
+  }
+
+  .text-color-gray {
+    color: gray;
+  }
+
+  .text-color-blue {
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    margin: 0;
+    color: rgb(9, 104, 218);
+    font-size: 13px;
+  }
+
+  .main-right-top {
+    width: 100%;
+    height: 215px;
+    margin: 5px 0;
+    padding: 10px;
+
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .main-right-top-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .main-right-bottom {
+    width: 100%;
+    height: 180px;
+    margin: 5px 0;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .main-right-bottom-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .main-right-footer {
+    /* border: 1px solid gray; */
+    width: 100%;
+    height: 100px;
+    margin: 5px 0;
+  }
+
+  .main-right-footer P {
+    color: gray;
+    font-size: 13px;
+  }
+
+  .like-count-box {
+    display: flex;
+    justify-content: start;
+    margin: 10px 0;
+  }
+
+  .like-count {
+    margin: 0 10px;
+    padding-top: 6px;
+    font-size: 15px;
+  }
+  .user-img-small {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 70%;
+  }
+
+  .comment-ul {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding-left: 80px;
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+  }
+
+  .write-comment-box {
+    position: relative;
+    /* border-bottom: 1px solid gray; */
+  }
+
+  #upload-btn {
+    position: absolute;
+    width: 10%;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    color: rgba(9, 104, 218, 0.3);
+    font-size: 13px;
+  }
+  #upload-btn:hover {
+    color: rgba(9, 104, 218, 1);
+  }
+
+  .input-text {
+    width: 90%;
+    height: 40px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+  }
+  .input-text::placeholder {
+    font-size: 13px;
+  }
+
+  .comment-ul li {
+    margin: 5px 0;
+    list-style-type: none;
+    font-size: 13px;
+  }
+
+  .comment-ul li span {
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .comment-ul li i {
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+  }
+
+  .remove-button {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    padding: 0;
+    border: none;
+
+    background-color: rgb(1, 1, 1, 0);
+    color: gray;
+
+    font-size: 10px;
+  }
+
+  .remove-button:hover {
+    color: red;
+    font-size: 15px;
+  }
+}
