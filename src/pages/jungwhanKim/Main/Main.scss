@@ -8,80 +8,8 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  .modal-overlay {
-    position: fixed;
-    z-index: 50;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  // 우측 상단 모달용 스타일시트
-  .modal {
-    display: block;
-    z-index: 100;
-
-    .modal_box {
-      position: absolute;
-      width: 200px;
-      transform: translateX(-90%) translateY(9.5%);
-      border-radius: 5px;
-      background: #ffffff;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    }
-
-    .modal-first-section {
-      padding: 16px;
-    }
-
-    .modal-second-section {
-      padding: 16px;
-      border-top: 0.5px solid rgb(208, 208, 208);
-    }
-
-    .modal-row {
-      @include alignCenter;
-      padding: 4px 0;
-    }
-
-    .modal-icon-profile {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-image: url('../../../assets/jungwhanKim/modal-profile.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .modal-icon-saved {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-image: url('../../../assets/jungwhanKim/bookmark.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 90%;
-    }
-
-    .modal-icon-settings {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-image: url('../../../assets/jungwhanKim/setting.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .modal-text {
-      margin-left: 12px;
-      font-size: 14px;
-    }
-  }
-
   .navbar {
+    @include flexCenter;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -90,7 +18,6 @@
     padding-top: 2px;
     border-bottom: 1px solid rgb(215, 215, 215);
     background-color: #ffffff;
-    @include flexCenter;
   }
 
   .navbar-content {
@@ -124,19 +51,21 @@
   .results {
     position: absolute;
     top: 100%;
-    width: 227px;
+    left: 50%;
+    width: 287px;
     padding: 24px;
+    transform: translate(-50%, 0);
     border-radius: 5px;
     background: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
 
-  .searchResultWrapper {
+  .search-result-wrapper {
     @include alignCenter;
     padding: 6px 0;
   }
 
-  .searchResultImg {
+  .search-result-img {
     width: 24px;
     height: 24px;
     margin-right: 12px;
@@ -146,7 +75,7 @@
     background-size: cover;
   }
 
-  .searchResultId {
+  .search-result-id {
     font-size: 14px;
     font-weight: bold;
   }

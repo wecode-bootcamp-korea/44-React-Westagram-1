@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import Comment from './Comment/Comment';
+import Comment from './Components/Comment/Comment';
+import Modal from './Components/Modal/Modal';
 import './Main.scss';
+// import '../../../assets/jungwhanKim/';
 
 const Main = () => {
   // 검색창에거 검색 가능한 값들과 그 배열용 훅 정의
+
+  // '../../../assets/jungwhanKim/profile_hat.jpg'
   const userList = [
-    ['georgekim', '../../assets/profile_hat.jpg'],
-    ['georgekim_official', '../../assets/profile_dark.jpg'],
-    ['google_korea', '../../assets/google.jpeg'],
-    ['general_assembly_official', '../../assets/GA.png'],
-    ['notion_so_official', '../../assets/notion.jpeg'],
-    ['slack_official', '../../assets/slack_hash_256.png'],
-    ['wecode', '../../assets/wecode-logo.png'],
-    ['wecode_korea', '../../assets/wecode_trans.jpeg'],
-    ['wecode_united_states', '../../assets/cowork.jpeg'],
+    ['georgekim', '../../../assets/jungwhanKim/blue_check.png'],
+    ['georgekim_official', '../../../assets/jungwhanKim/profile_dark.jpg'],
+    ['google_korea', '../../../assets/jungwhanKim/google.jpeg'],
+    ['general_assembly_official', '../../../assets/jungwhanKim/GA.png'],
+    ['notion_so_official', '../../../assets/jungwhanKim/notion.jpeg'],
+    ['slack_official', '../../../assets/jungwhanKim/slack_hash_256.png'],
+    ['wecode', '../../../assets/jungwhanKim/wecode-logo.png'],
+    ['wecode_korea', '../../../assets/jungwhanKim/wecode_trans.jpeg'],
+    ['wecode_united_states', '../../../assets/jungwhanKim/cowork.jpeg'],
   ];
 
   // 검색값과 사용자 아이디가 일치할 시 푸쉬할 빈 배열
@@ -33,9 +37,6 @@ const Main = () => {
 
   // 프로필 모달의 상태 및 변경용 훅 정의
   const [modalOpen, setModalOpen] = useState(false);
-
-  // 각 커멘트의 좋아요 상태 및 변경용 훅 정의
-  const [commentLiked, setCommentLiked] = useState([]);
 
   // 상단 검색창에 값이 입력될 시 호출
   const handleSearchInput = event => {
@@ -64,7 +65,9 @@ const Main = () => {
       alert('게시 전 내용을 입력해주세요!');
       return;
     }
-    comments.push(commentInput);
+
+    setComments([...comments, commentInput]);
+    // comments.push(commentInput);
     setCommentInput('');
   };
 
@@ -80,17 +83,6 @@ const Main = () => {
 
   const handleCloseModal = () => {
     setModalOpen(!modalOpen);
-  };
-
-  const handleLike = id => {
-    let likedArray = [...commentLiked];
-    setCommentLiked(likedArray);
-    likedArray.push(id);
-    console.log(likedArray);
-    console.log(commentLiked);
-    // setCommentLiked(likedArray);
-    // console.log(commentLiked);
-    // console.log(commentLiked);
   };
 
   return (
@@ -120,12 +112,12 @@ const Main = () => {
               >
                 {matchingUsers.length > 0 ? (
                   matchingUsers.map((item, i) => (
-                    <div key={i} className="searchResultWrapper">
+                    <div key={i} className="search-result-wrapper">
                       <div
-                        className="searchResultImg"
                         style={{ backgroundImage: `url(${item[1]})` }}
+                        className="search-result-img"
                       />
-                      <div className="searchResultId">{item[0]}</div>
+                      <div className="search-result-id">{item[0]}</div>
                     </div>
                   ))
                 ) : (
@@ -141,32 +133,7 @@ const Main = () => {
               <div onClick={handleOpenModal} className="my" />
 
               {/* <!--프로필이 클릭되면 열리는 모달--> */}
-              {modalOpen ? (
-                <>
-                  <div onClick={handleCloseModal} className="modal-overlay" />
-                  <div className="modal">
-                    <div className="modal_box">
-                      <div className="modal-first-section">
-                        <div className="modal-row">
-                          <div className="modal-icon-profile" />
-                          <div className="modal-text">프로필</div>
-                        </div>
-                        <div className="modal-row">
-                          <div className="modal-icon-saved" />
-                          <div className="modal-text">저장됨</div>
-                        </div>
-                        <div className="modal-row">
-                          <div className="modal-icon-settings" />
-                          <div className="modal-text">설정</div>
-                        </div>
-                      </div>
-                      <div className="modal-second-section">
-                        <div className="modal-text">로그아웃</div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ) : null}
+              {modalOpen ? <Modal handleCloseModal={handleCloseModal} /> : null}
             </div>
           </div>
         </div>
@@ -220,9 +187,8 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className="comments">
-                  {/* <!--댓글들이 달릴 곳--> */}
+                  {/* <!--Comment components will be mapped below--> */}
                   {comments.map((comment, i) => (
                     <Comment
                       key={i}

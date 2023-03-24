@@ -1,4 +1,4 @@
-@import '../../../../styles/mixin';
+@import '../../../../../styles/mixin';
 
 .comment {
   display: flex;
@@ -24,7 +24,7 @@
     height: 16px;
     margin-right: 16px;
     opacity: 0.5;
-    background-image: url('../../../../assets/jungwhanKim/heart-inactive.jpeg');
+    background-image: url('../../../../../assets/jungwhanKim/heart-inactive.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
