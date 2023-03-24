@@ -1,0 +1,184 @@
+@import '../../../../../styles/mixin';
+
+.post {
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  .article-top {
+    justify-content: space-between;
+    padding: 24px 8px;
+    @include alignCenter;
+  }
+
+  .account-pic {
+    @include fullBgImage(
+      'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2'
+    );
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .account-name {
+    margin-left: 12px;
+  }
+
+  .account-name-main {
+    @include headerText16Px;
+  }
+
+  .blue-check {
+    @include fullBgImage('../../../../../assets/jungwhanKim/blue_check.png');
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+  }
+
+  .account-name-sub {
+    @include subtext12Px;
+    margin-top: 4px;
+  }
+
+  .article-menu {
+    @include fullBgImage(
+      'https://cdn.icon-icons.com/icons2/1659/PNG/512/3844444-dot-menu-more-option_110318.png'
+    );
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+  }
+
+  .post-img {
+    @include fullBgImage(
+      'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa5edc5c3-6d35-464a-bf68-4543d6982816%2FH53A7073.jpg?id=00fd33ac-3dbf-4029-af21-afd6aa6fa4a4&table=block&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=2000&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2'
+    );
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+  }
+
+  .third-row {
+    justify-content: space-between;
+    padding: 16px 0;
+    @include alignCenter;
+  }
+
+  .like {
+    @include fullBgImage(
+      'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png'
+    );
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+  }
+
+  .like-clicked {
+    @include fullBgImage(
+      'https://www.pngitem.com/pimgs/m/522-5229528_transparent-background-instagram-heart-icon-hd-png-download.png'
+    );
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+  }
+
+  .comment-img {
+    @include fullBgImage(
+      '../../../../../assets/jungwhanKim/instagram-comment-icon.png'
+    );
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+    background-size: 90%;
+  }
+
+  .share-img {
+    @include fullBgImage(
+      '../../../../../assets/jungwhanKim/instagram-share-icon.png'
+    );
+    width: 26px;
+    height: 26px;
+    background-size: 90%;
+  }
+
+  .save-img {
+    @include fullBgImage(
+      '../../../../../assets/jungwhanKim/PikPng.com_ig-icon-png_1255467.png'
+    );
+    width: 24px;
+    height: 26px;
+    background-size: 90%;
+  }
+
+  .account-pic-sm {
+    @include fullBgImage(
+      'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2'
+    );
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+
+  .post-status-msg {
+    padding-left: 8px;
+    font-size: 14px;
+  }
+
+  .bolded {
+    font-weight: 700;
+  }
+
+  .comments {
+    width: 600px;
+    padding: 16px 0;
+  }
+
+  .dummy-comment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .see-more {
+    margin-left: 5px;
+    opacity: 0.6;
+  }
+
+  .time-posted {
+    opacity: 0.5;
+    /* padding: 0 24px; */
+    font-size: 12px;
+  }
+
+  .comment-input {
+    position: relative;
+    padding: 16px 0;
+  }
+
+  .comment-input input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 4px;
+  }
+
+  .add-button {
+    position: absolute;
+    z-index: 10;
+    top: 37%;
+    right: -20px;
+    padding: 4px 8px;
+    transform: translateX(-80%);
+    transition: 0.3s;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #1e90ff;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}

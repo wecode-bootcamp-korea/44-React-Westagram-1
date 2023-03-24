@@ -29,3 +29,10 @@
   color: #7e7e7e;
   font-size: 12px;
 }
+
+@mixin fullBgImage($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

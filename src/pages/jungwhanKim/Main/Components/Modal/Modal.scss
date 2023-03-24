@@ -16,7 +16,7 @@
   .modal-box {
     position: absolute;
     width: 200px;
-    transform: translateX(-90%) translateY(9.5%);
+    transform: translateX(-120%) translateY(9.5%);
     border-radius: 5px;
     background: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -37,33 +37,25 @@
   }
 
   .modal-icon-profile {
+    @include fullBgImage('../../../../../assets/jungwhanKim/modal-profile.png');
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-image: url('../../../../../assets/jungwhanKim/modal-profile.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 
   .modal-icon-saved {
+    @include fullBgImage('../../../../../assets/jungwhanKim/bookmark.png');
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-image: url('../../../../../assets/jungwhanKim/bookmark.png');
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: 90%;
   }
 
   .modal-icon-settings {
+    @include fullBgImage('../../../../../assets/jungwhanKim/setting.png');
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-image: url('../../../../../assets/jungwhanKim/setting.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 
   .modal-text {

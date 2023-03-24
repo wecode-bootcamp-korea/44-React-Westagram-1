@@ -1,0 +1,14 @@
+@import '../../../../../styles/mixin';
+
+.profile-section {
+  @include alignCenter;
+
+  .profile-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: url('../../../../../assets/jungwhanKim/profile_hat.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+}

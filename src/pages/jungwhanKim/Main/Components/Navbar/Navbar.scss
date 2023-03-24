@@ -1,0 +1,157 @@
+@import '../../../../../styles/mixin';
+
+.navbar {
+  @include flexCenter;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  padding-top: 2px;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  background-color: #ffffff;
+
+  .navbar-content {
+    @include alignedSpaceBetween;
+  }
+
+  .align-center {
+    @include alignCenter;
+  }
+
+  .wecode-logo {
+    @include fullBgImage('../../../../../assets/jungwhanKim/wecode-logo.png');
+    margin-right: 6px;
+    border-radius: 5px;
+  }
+
+  .text-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: -1px;
+  }
+
+  .results {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 287px;
+    padding: 24px;
+    transform: translate(-50%, 0);
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+
+  .search-result-wrapper {
+    @include alignCenter;
+    padding: 6px 0;
+  }
+
+  .search-result-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-repeat: 'no-repeat';
+    background-position: center;
+    background-size: cover;
+  }
+
+  .search-result-id {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .search-wrapper {
+    @include alignCenter;
+  }
+
+  .search-wrapper input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .explore {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+  }
+
+  .heart {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+  }
+
+  .my {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background-image: url('../../../../../assets/jungwhanKim/profile_hat.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .my.active {
+    outline: 2px solid black;
+  }
+}
+
+@media (min-width: 320px) {
+  .navbar-content {
+    width: 90vw;
+
+    .wecode-logo {
+      width: 30px;
+      height: 30px;
+    }
+
+    .text-logo {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .navbar-content {
+    width: 80vw;
+
+    .wecode-logo {
+      width: 20px;
+      height: 20px;
+    }
+
+    .text-logo {
+      display: flex;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    width: 100vw;
+
+    .text-logo {
+      display: flex;
+    }
+  }
+}
