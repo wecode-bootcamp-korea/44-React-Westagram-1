@@ -62,7 +62,7 @@ const Navbar = ({}) => {
         {/* <!--검색창--> */}
         <div className="search-wrapper">
           <input
-            className="searchInput"
+            className="search-input"
             type="text"
             placeholder="검색"
             value={searchInput}
@@ -75,12 +75,12 @@ const Navbar = ({}) => {
           >
             {matchingUsers.length > 0 ? (
               matchingUsers.map((item, i) => (
-                <div key={i} className="search-result-wrapper">
+                <div key={i} className="search-result">
                   <div
                     style={{ backgroundImage: `url(${item[1]})` }}
-                    className="search-result-img"
+                    className="result-img"
                   />
-                  <div className="search-result-id">{item[0]}</div>
+                  <div className="result-id">{item[0]}</div>
                 </div>
               ))
             ) : (
