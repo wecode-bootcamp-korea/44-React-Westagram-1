@@ -13,3 +13,19 @@
   display: flex;
   align-items: center;
 }
+
+@mixin alignedSpaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin headerText16Px {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@mixin subtext12Px {
+  color: #7e7e7e;
+  font-size: 12px;
+}

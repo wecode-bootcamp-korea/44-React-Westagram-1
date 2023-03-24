@@ -1,0 +1,42 @@
+@import '../../../../../styles/mixin';
+
+.recommend {
+  padding: 10px 0;
+  cursor: pointer;
+
+  .wrapper {
+    @include alignedSpaceBetween;
+
+    .follow-text {
+      color: #405de6;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .align-center {
+      @include alignCenter;
+
+      .recommend-pic {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-image: url('https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2');
+        background-position: center;
+        background-size: cover;
+      }
+
+      .name-wrapper {
+        margin-left: 12px;
+      }
+
+      .account-id {
+        @include headerText16Px;
+      }
+
+      .account-subtext {
+        @include subtext12Px;
+        margin-top: 4px;
+      }
+    }
+  }
+}

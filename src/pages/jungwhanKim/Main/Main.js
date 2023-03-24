@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import Box from './Components/Box/Box';
 import Comment from './Components/Comment/Comment';
 import Modal from './Components/Modal/Modal';
+import Recommendation from './Components/Recommendation/Recommendation';
+import Story from './Components/Story/Story';
 import './Main.scss';
-// import '../../../assets/jungwhanKim/';
 
 const Main = () => {
-  // 검색창에거 검색 가능한 값들과 그 배열용 훅 정의
-
-  // '../../../assets/jungwhanKim/profile_hat.jpg'
+  // 검색창에서 검색 가능한 값들과 그 배열용 훅 정의
   const userList = [
     ['georgekim', '../../../assets/jungwhanKim/blue_check.png'],
     ['georgekim_official', '../../../assets/jungwhanKim/profile_dark.jpg'],
@@ -67,7 +67,6 @@ const Main = () => {
     }
 
     setComments([...comments, commentInput]);
-    // comments.push(commentInput);
     setCommentInput('');
   };
 
@@ -225,96 +224,43 @@ const Main = () => {
               </div>
             </div>
             {/* <!--스토리 시작 부분--> */}
-            <div className="box">
-              <div className="stories-top">
-                <div className="stories-header">스토리</div>
-                <div className="stories-see-all">모두 보기</div>
-              </div>
+            <Box>
               {/* <!--스토리 컴포넌트들 나열된 부분--> */}
-              <div className="story-component">
-                <div className="align-center">
-                  <div className="gradient">
-                    <div className="account-pic-story" />
-                  </div>
-                  <div className="account-name">
-                    <div className="account-name-main">위코드 수강생</div>
-                    <div className="account-name-sub">위코드 본사(위워크)</div>
-                  </div>
-                </div>
-              </div>
-              <div className="story-component">
-                <div className="align-center">
-                  <div className="gradient">
-                    <div className="account-pic-story" />
-                  </div>
-                  <div className="account-name">
-                    <div className="account-name-main">위코드 수강생</div>
-                    <div className="account-name-sub">위코드 본사(위워크)</div>
-                  </div>
-                </div>
-              </div>
-              <div className="story-component">
-                <div className="align-center">
-                  <div className="gradient">
-                    <div className="account-pic-story" />
-                  </div>
-                  <div className="account-name">
-                    <div className="account-name-main">위코드 수강생</div>
-                    <div className="account-name-sub">위코드 본사(위워크)</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <Story
+                storyId="slack"
+                storySubtext="New York City, NY"
+                imageUrl="https://www.techrepublic.com/wp-content/uploads/2016/05/slackmarkweb.png"
+              />
+              <Story
+                storyId="notion_so_official"
+                storySubtext="노션 공식 페이지"
+                imageUrl="https://www.notion.so/cdn-cgi/image/format=auto,width=640,quality=100/front-static/shared/icons/notion-app-icon-3d.png"
+              />
+              <Story
+                storyId="octocat_github"
+                storySubtext="make sure you commit!"
+                imageUrl="https://i.pinimg.com/originals/b5/1b/78/b51b78ecc9e5711274931774e433b5e6.png"
+              />
+            </Box>
             {/* <!--추천 시작 부분--> */}
-            <div className="box">
-              <div className="stories-top">
-                <div className="stories-header">회원님을 위한 추천</div>
-                <div className="stories-see-all">모두 보기</div>
-              </div>
+            <Box>
               {/* <!--팔로우 추천 컴포넌트들 나열된 부분--> */}
-              <div className="recommend-component">
-                <div className="recomment-wrapper">
-                  <div className="align-center">
-                    <div className="account-pic" />
-                    <div className="account-name">
-                      <div className="account-name-main">위코드 수강생</div>
-                      <div className="account-name-sub">
-                        회원님을 팔로우합니다
-                      </div>
-                    </div>
-                  </div>
-                  <div className="follow-text">팔로우</div>
-                </div>
-              </div>
-              <div className="recommend-component">
-                <div className="recomment-wrapper">
-                  <div className="align-center">
-                    <div className="account-pic" />
-                    <div className="account-name">
-                      <div className="account-name-main">위코드 수강생</div>
-                      <div className="account-name-sub">
-                        회원님을 팔로우합니다
-                      </div>
-                    </div>
-                  </div>
-                  <div className="follow-text">팔로우</div>
-                </div>
-              </div>
-              <div className="recommend-component">
-                <div className="recomment-wrapper">
-                  <div className="align-center">
-                    <div className="account-pic" />
-                    <div className="account-name">
-                      <div className="account-name-main">위코드 수강생</div>
-                      <div className="account-name-sub">
-                        회원님을 팔로우합니다
-                      </div>
-                    </div>
-                  </div>
-                  <div className="follow-text">팔로우</div>
-                </div>
-              </div>
-            </div>
+              <Recommendation
+                imageUrl="https://velog.velcdn.com/images/haerong22/post/d8cc6ab6-9b0a-4581-ac68-0fad44a39bbb/image.jpeg"
+                recommendId="velopert"
+                recommendSubtext="I make tutorials!"
+              />
+              <Recommendation
+                imageUrl="https://yt3.googleusercontent.com/R0wOpi3k0bm70OnRBULpgzqu787ifW6rqn-SjqwhKO8Gl_LQtVS0asyxKuesLDNNJgPfid7z=s900-c-k-c0x00ffffff-no-rj"
+                recommendId="storybook.js"
+                recommendSubtext="build bulletproof UI components!"
+              />
+              <Recommendation
+                imageUrl="https://s3-alpha.figma.com/hub/file/697598809/ce5e0bb3-16b9-4d88-9bca-7d237fe725a8-cover.png"
+                recommendId="figma.design"
+                recommendSubtext="we run the UI design industry"
+              />
+            </Box>
           </div>
         </div>
       </div>
