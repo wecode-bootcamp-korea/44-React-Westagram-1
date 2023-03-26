@@ -1,7 +1,7 @@
 import React from 'react';
 import './Comment.scss';
 
-const Comment = ({ content, handleRemove }) => {
+const Comment = ({ content, handleLike, likedStatus, handleRemove }) => {
   return (
     <div className="comment">
       <div className="align-center">
@@ -9,7 +9,10 @@ const Comment = ({ content, handleRemove }) => {
         <div className="comment-content">{content}</div>
       </div>
       <div className="align-center">
-        <div onClick={() => {}} className="comment-like" />
+        <div
+          onClick={handleLike}
+          className={likedStatus ? 'comment-like-clicked' : 'comment-like'}
+        />
         <div onClick={handleRemove} className="deleteBtn">
           삭제
         </div>

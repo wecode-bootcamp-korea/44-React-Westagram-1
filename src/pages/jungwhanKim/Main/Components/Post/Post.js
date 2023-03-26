@@ -6,29 +6,58 @@ const Post = () => {
   // 댓글 섹션에 맵핑할 댓글 배열 선언
   const [comments, setComments] = useState([]);
 
+  const [liked, setLiked] = useState([]);
+
   // 포스트 댓글 게시 인풋창 상태값 및 변경용 훅 정의
-  const [commentInput, setCommentInput] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   // 댓글 게시 입력창 이벤트 핸들러
   const handleComment = event => {
-    setCommentInput(event.target.value);
+    setInputValue(event.target.value);
   };
 
   // 댓글 서브밋 액션시 이벤트 핸들러
   const handleSubmit = event => {
     event.preventDefault();
-    if (commentInput === '') {
+
+    if (inputValue === '') {
       alert('게시 전 내용을 입력해주세요!');
       return;
     }
 
-    setComments([...comments, commentInput]);
-    setCommentInput('');
+    const newComment = {
+      id: comments.length,
+      content: inputValue,
+      liked: false,
+    };
+
+    setComments([...comments, newComment]);
+    setInputValue('');
   };
+
+  // 좋아요 하트를 누르면 호출
+  const handleToggleLike = id => {
+    //각 댓글의 id를 인자로 받아와서
+    setComments(
+      comments?.map(comment =>
+        // 현재 댓글들을 맵핑한 후,
+        // 인자로 받아온 객체의 id와 맵핑 중인 요소의 id가 같으면, 맵핑하는 comment 객체를 구조분해할당하여 나머지는 spread 연산자로 냅두고, liked key의 값만 추출하여 반대 값으로 바꾼다.
+        // id가 일치하지 않는, 즉 클릭된 댓글을 제외한 모든 댓글은 그대로 comment 객체로 수정 없이 유지된다.
+        comment.id === id ? { ...comment, liked: !comment.liked } : comment
+      )
+    );
+  };
+
+  // 좋아요 상태 검사를 위한 콘솔 로그
+  console.log(
+    comments.map(comment => {
+      console.log(comment.liked);
+    })
+  );
 
   const handleRemove = id => {
     // newComments라는 comments의 상태값을 복사한 배열을 생성, 이후 매핑하여 클릭했던 아이템의 key와 index값이 일치하지 않은 아이템들만 filter하여 새로운 배열에 생성; 이후 배열을 새 상태값으로 지정
-    const newComments = comments.filter((item, i) => id !== i);
+    const newComments = comments.filter(item => id !== item.id);
     setComments(newComments);
   };
 
@@ -81,9 +110,11 @@ const Post = () => {
         {/* <!--Comment components will be mapped below--> */}
         {comments.map((comment, i) => (
           <Comment
-            key={i}
-            content={comments[i]}
-            handleRemove={() => handleRemove(i)}
+            key={comment.id}
+            content={comment.content}
+            handleLike={() => handleToggleLike(comment.id)}
+            likedStatus={comment.liked}
+            handleRemove={() => handleRemove(comment.id)}
           />
         ))}
       </div>
@@ -96,7 +127,7 @@ const Post = () => {
             type="text"
             placeholder="댓글 달기..."
             onInput={handleComment}
-            value={commentInput}
+            value={inputValue}
           />
           {/* <!--게시 버튼--> */}
           <button className="add-button">게시</button>

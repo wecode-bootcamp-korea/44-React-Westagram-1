@@ -1,7 +1,7 @@
 @import '../../../../../styles/mixin';
+@import '../../../../../styles/variables';
 
 .profile-section {
-  width: 100%;
   @include alignCenter;
 
   .profile-image {
@@ -27,7 +27,7 @@
     }
 
     .switch {
-      color: #1e90ff;
+      color: $blue-common;
       font-size: 14px;
     }
   }

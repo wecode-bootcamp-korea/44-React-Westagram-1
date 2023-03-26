@@ -1,4 +1,5 @@
 @import '../../../../../styles/mixin';
+@import '../../../../../styles/variables';
 
 .recommend {
   padding: 10px 0;
@@ -8,7 +9,7 @@
     @include alignedSpaceBetween;
 
     .follow-text {
-      color: #405de6;
+      color: $blue-common;
       font-size: 14px;
       font-weight: 600;
     }
