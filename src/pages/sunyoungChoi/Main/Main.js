@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useNavigate } from "react-router-dom";
 import Nav from './Nav';
 import Body from './Bodymain';
 import Bodyright from './Bodyright';
@@ -9,7 +8,7 @@ function Main() {
   return (
     <div className="main">
       <Nav />
-      <div className="mainWrap">
+      <div className="main-wrap">
         <Body />
         <Bodyright />
       </div>

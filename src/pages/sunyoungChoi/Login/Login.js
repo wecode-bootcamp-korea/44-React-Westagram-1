@@ -1,48 +1,30 @@
-import React, { useId, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
-// const [loginpass, loginblock] = useState(false);
-
 const Login = () => {
-  const navigate = useNavigate();
-
   let [userIdValue, setIdInput] = useState('');
   let [userPwValue, setPwInput] = useState('');
-  // console.log(userIdValue);
-  // console.log(userPwValue);
+  let [act, setAct] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleId = e => {
     setIdInput(e.target.value);
+    actPassedLogin();
   };
 
   const handlePw = e => {
     setPwInput(e.target.value);
+    actPassedLogin();
   };
 
-  //   if (
-  //     userId.value.length > 0 &&
-  //     userId.value.indexOf('@') !== -1 &&
-  //     userId.value.length >= 5
-  //   )
   const goToMain = () => {
-    if (
-      useId.includes('@') &&
-      userIdValue.length < 0 &&
-      userPwValue.length >= 5
-    ) {
-      navigate('/Main');
-    } else {
-      alert('아이디와 비빌번호를 다시 한번 확인해주세요');
-    }
+    navigate('/Main');
   };
-
-  let [act, setAct] = useState(false);
 
   const actPassedLogin = () => {
-    return userIdValue.includes('@') &&
-      userPwValue.length >= 5 &&
-      userPwValue.length > 0
+    userIdValue.includes('@') && userPwValue.length >= 5
       ? setAct(true)
       : setAct(false);
   };
@@ -54,7 +36,6 @@ const Login = () => {
         <div className="login-contents">
           <input
             onChange={handleId}
-            onKeyUp={actPassedLogin}
             id="user-id"
             className="input"
             type="text"
@@ -62,7 +43,6 @@ const Login = () => {
           />
           <input
             onChange={handlePw}
-            onKeyUp={actPassedLogin}
             id="user-pw"
             className="input"
             type="password"
@@ -72,7 +52,7 @@ const Login = () => {
             type="button"
             className={act ? 'passed-login' : 'failed-login'}
             onClick={goToMain}
-            disabled={userIdValue === '' || userPwValue === '' ? true : false}
+            disabled={act ? true : false}
           >
             로그인
           </button>

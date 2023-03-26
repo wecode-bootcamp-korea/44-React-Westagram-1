@@ -1,40 +1,26 @@
 import React from 'react';
-
-function Logobox() {
-  return (
-    <div className="logo-box">
-      <i className="fa-brands fa-instagram" />
-      <p className="logo">Westargram</p>
-    </div>
-  );
-}
-
-function Searchbox() {
-  return (
-    <div className="search-box">
-      <input className="search-input" type="text" placeholder="검색" />
-      <i className="fa-sharp fa-solid fa-magnifying-glass" />
-    </div>
-  );
-}
-
-function Innermenu() {
-  return (
-    <div className="innerMenu">
-      <img src="../../assets/sunyoungChoi/explore.png" alt="explore icon" />
-      <img src="../../assets/sunyoungChoi/heart.png" alt="heart icon" />
-      <img src="../../assets/sunyoungChoi/profile.png" alt="profile icon" />
-    </div>
-  );
-}
+import Explor from '../../../assets/sunyoungChoi/explore.png';
+import Heart from '../../../assets/sunyoungChoi/heart.png';
+import Glass from '../../../assets/sunyoungChoi/profile.png';
+import './Nav.scss';
 
 function Nav() {
   return (
-    <div className="nav">
+    <div className="nav-wrap">
       <nav>
-        <Logobox />
-        <Searchbox />
-        <Innermenu />
+        <div className="logo-box">
+          <i className="fa-brands fa-instagram" />
+          <p className="logo">Westargram</p>
+        </div>
+        <div className="search-box">
+          <input className="search-input" type="text" placeholder="검색" />
+          <i className="fa-sharp fa-solid fa-magnifying-glass" />
+        </div>
+        <div className="inner-Menu">
+          <img className="menu-icon" src={Explor} alt="explore icon" />
+          <img className="menu-icon" src={Heart} alt="heart icon" />
+          <img className="menu-icon" src={Glass} alt="profile icon" />
+        </div>
       </nav>
     </div>
   );

@@ -1,25 +1,21 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import Img from '../../../assets/sunyoungChoi/mountain.jpg';
+import ProfileBox from './ProfileBox';
+import CommentBox from '../Main/act/CommentBox';
+import './Bodymain.scss';
 
 function Bodymain() {
   return (
-    <div className="bodymain">
+    <div className="body-main">
       <div className="feeds">
         <article className="feeds-contents-wrap">
-          <div className="feedsTop">
-            <img
-              className="user-img"
-              src="./img/주아 프로필사진.jpeg"
-            />
-            <p className="user-name">HappyDog^^</p>
+          <div className="feeds-top">
+            <ProfileBox />
             <p className="dot">...</p>
           </div>
           <div className="feeds-contents">
-            <img
-              className="contents-img"
-              src="./img/주아 메인 사진.jpeg"
-              alt="피드 이미지"
-            />
+            <img className="contents-img" src={Img} alt="피드 이미지" />
           </div>
           <div className="contents-btn">
             <form>
@@ -39,27 +35,14 @@ function Bodymain() {
               </button>
             </form>
           </div>
-          <div className="feeds-contents-bottom">
+          <div className="contents-bottom">
             <div className="commend-wrap">
               <div className="like-count-box">
-                <img
-                  className="user-img-small"
-                  src="./img/karsten-winegeart-vH183sGZmiE-unsplash.jpg"
-                />
+                <img className="user-img-small" src={Img} />
                 <p className="like-count">aineworld님 외 10명이 좋아합니다</p>
               </div>
+              <CommentBox />
             </div>
-            <form className="write-comment-box">
-              <ul className="commentUl" />
-              <input
-                className="input-text"
-                type="text"
-                placeholder="댓글달기..."
-              />
-              <button id="upload-btn" type="button">
-                게시
-              </button>
-            </form>
           </div>
         </article>
       </div>
