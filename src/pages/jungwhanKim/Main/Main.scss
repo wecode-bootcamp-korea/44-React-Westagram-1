@@ -32,9 +32,19 @@
   @media (min-width: 760px) {
     .container {
       width: 80vw;
+      margin: 0 auto;
 
       .column-left {
         display: block;
+        margin: 60px auto;
+      }
+      .column-right {
+        position: relative;
+
+        span {
+          position: fixed;
+          width: 370px;
+        }
       }
     }
   }

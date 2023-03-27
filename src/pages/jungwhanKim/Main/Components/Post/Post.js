@@ -48,15 +48,8 @@ const Post = () => {
     );
   };
 
-  // 좋아요 상태 검사를 위한 콘솔 로그
-  console.log(
-    comments.map(comment => {
-      console.log(comment.liked);
-    })
-  );
-
   const handleRemove = id => {
-    // newComments라는 comments의 상태값을 복사한 배열을 생성, 이후 매핑하여 클릭했던 아이템의 key와 index값이 일치하지 않은 아이템들만 filter하여 새로운 배열에 생성; 이후 배열을 새 상태값으로 지정
+    // newComments라는 comments의 상태값을 복사한 배열을 생성, 이후 매핑하여 클릭했던 아이템의 id와 맵핑 중인 객체의 id가 일치하지 않은 아이템들만 filter
     const newComments = comments.filter(item => id !== item.id);
     setComments(newComments);
   };
