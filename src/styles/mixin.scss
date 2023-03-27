@@ -30,7 +30,7 @@
   font-size: 12px;
 }
 
-@mixin fullBgImage($url) {
+@mixin fullBgImage($url: '') {
   background-image: url($url);
   background-repeat: no-repeat;
   background-position: center center;

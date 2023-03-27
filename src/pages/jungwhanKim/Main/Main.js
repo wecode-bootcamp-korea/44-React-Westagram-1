@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from './Components/Box/Box';
 import Links from './Components/Links/Links';
 import Navbar from './Components/Navbar/Navbar';
@@ -7,18 +7,35 @@ import ProfileSection from './Components/ProfileSection/ProfileSection';
 import Recommendation from './Components/Recommendation/Recommendation';
 import Story from './Components/Story/Story';
 import './Main.scss';
+import '../../../assets/jungwhanKim/wecode-logo.png';
 
 const Main = () => {
+  const [postData, setPostData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/postData.json')
+      .then(response => response.json())
+      .then(data => setPostData(data));
+  }, []);
+
   return (
     <div className="main">
       <div className="container">
         {/* <!--내비게이션 바--> */}
         <Navbar />
         <div className="column-left">
-          {/* <!--포스트 컴포넌트--> */}
           <div>
-            <Post />
-            <Post />
+            {postData?.map(post => (
+              <Post
+                key={post.id}
+                account={post.account}
+                profileImg={post.profileImg}
+                location={post.location}
+                verified={post.verified}
+                postImg={post.postImg}
+                content={post.content}
+              />
+            ))}
           </div>
           {/* <!--우측 콜룸--> */}
           <div className="column-right">

@@ -5,6 +5,18 @@
   border-radius: 12px;
   background-color: #ffffff;
 
+  .align-center {
+    @include alignCenter;
+
+    .content-wrapper {
+      p {
+        display: inline-block;
+        padding: 4px 0;
+        line-height: 1.2;
+      }
+    }
+  }
+
   .article-top {
     justify-content: space-between;
     padding: 24px 8px;
@@ -12,9 +24,7 @@
   }
 
   .account-pic {
-    @include fullBgImage(
-      'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0087623c-b734-4358-8a08-051a10c1bee1%2Fsimple_logo.jpg?table=block&id=4319a2cb-312d-429b-8e2b-5e45c135b9d6&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=250&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2'
-    );
+    @include fullBgImage('');
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -50,9 +60,7 @@
   }
 
   .post-img {
-    @include fullBgImage(
-      'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa5edc5c3-6d35-464a-bf68-4543d6982816%2FH53A7073.jpg?id=00fd33ac-3dbf-4029-af21-afd6aa6fa4a4&table=block&spaceId=4b97eaca-7938-4c43-b27c-a0c55795a841&width=2000&userId=40d8d25d-e223-4a66-b9b6-f761171a73d5&cache=v2'
-    );
+    @include fullBgImage('');
     width: 100%;
     height: 400px;
     border-radius: 5px;
@@ -75,7 +83,7 @@
 
   .like-clicked {
     @include fullBgImage(
-      'https://www.pngitem.com/pimgs/m/522-5229528_transparent-background-instagram-heart-icon-hd-png-download.png'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDqTa_wtBJdpn36-FlcXZUYclvCGgGkh1LmQ&usqp=CAU'
     );
     width: 26px;
     height: 26px;
@@ -125,7 +133,7 @@
   }
 
   .bolded {
-    font-weight: 700;
+    font-weight: 800;
   }
 
   .comments {
@@ -142,7 +150,7 @@
 
   .see-more {
     margin-left: 5px;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   .time-posted {
@@ -186,5 +194,12 @@
       background-color: #1e90ff;
       color: white;
     }
+  }
+}
+
+@media (max-width: 760px) {
+  .post-img {
+    position: relative;
+    width: 100vw;
   }
 }

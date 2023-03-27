@@ -4,7 +4,6 @@ import './Links.scss';
 import { LINKS_LIST } from '../../linksList';
 
 const Links = () => {
-  console.log(LINKS_LIST);
   return (
     <div className="links">
       <div className="wrapper">

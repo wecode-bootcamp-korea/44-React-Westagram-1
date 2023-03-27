@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import Comment from '../Comment/Comment';
 import './Post.scss';
 
-const Post = () => {
+const Post = ({
+  account,
+  profileImg,
+  location,
+  verified,
+  postImg,
+  content,
+}) => {
   // 댓글 섹션에 맵핑할 댓글 배열 선언
   const [comments, setComments] = useState([]);
-
-  const [liked, setLiked] = useState([]);
 
   // 포스트 댓글 게시 인풋창 상태값 및 변경용 훅 정의
   const [inputValue, setInputValue] = useState('');
@@ -59,19 +64,29 @@ const Post = () => {
       {/* <!--포스트 첫번째 로우--> */}
       <div className="article-top">
         <div className="align-center">
-          <div className="account-pic" />
+          <div
+            className="account-pic"
+            style={{
+              backgroundImage: `url(${profileImg})`,
+            }}
+          />
           <div className="account-name">
             <div className="align-center">
-              <div className="account-name-main">wecode_bootcamp</div>
-              <div className="blue-check" />
+              <div className="account-name-main">{account}</div>
+              {verified ? <div className="blue-check" /> : null}
             </div>
-            <div className="account-name-sub">위워크 선릉 2호점</div>
+            <div className="account-name-sub">{location}</div>
           </div>
         </div>
         <div className="article-menu" />
       </div>
       {/* <!--포스트 사진--> */}
-      <div className="post-img" />
+      <div
+        className="post-img"
+        style={{
+          backgroundImage: `url(${postImg})`,
+        }}
+      />
       {/* <!--3번째 로우/하트, 공유 기능들--> */}
       <div className="third-row">
         <div className="align-center">
@@ -85,17 +100,17 @@ const Post = () => {
       <div className="align-center">
         <div className="account-pic-sm" />
         <div className="post-status-msg">
-          <span className="bolded">wecode_bootcamp</span>님{' '}
+          <span className="bolded">{account}</span>님{' '}
           <span className="bolded">외 124명</span>이 좋아합니다
         </div>
       </div>
       {/* dummy comment below */}
       <div className="dummy-comment">
         <div className="align-center">
-          <div className="comment-id">wecode_bootcamp</div>
-          <div className="align-center">
-            <div>🌊🚢 44기는 오늘도 순항 중입니다! 🙌🙌🙌 ...</div>
-            <div className="see-more">더 보기</div>
+          <div className="bolded">{account}&nbsp;</div>
+          <div className="content-wrapper">
+            <p>{content}</p>
+            {/* <div className="see-more">더 보기</div> */}
           </div>
         </div>
       </div>
