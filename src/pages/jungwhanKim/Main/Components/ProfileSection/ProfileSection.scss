@@ -6,15 +6,17 @@
 
   .profile-image {
     @include fullBgImage('../../../../../assets/jungwhanKim/profile_hat.jpg');
+    flex-shrink: 0;
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    background-color: yellow;
   }
 
   .profile-text {
     @include alignedSpaceBetween;
     width: 100%;
-    padding-left: 16px;
+    margin-left: 16px;
 
     .profile-name {
       @include headerText16Px;

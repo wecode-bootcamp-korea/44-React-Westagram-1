@@ -9,12 +9,9 @@ const Links = () => {
     <div className="links">
       <div className="wrapper">
         {LINKS_LIST.map(link => (
-          <div key={link.id}>
-            <Link key={link.id} className="link" path={link.path}>
-              {link.name}
-            </Link>{' '}
-            &nbsp;·&nbsp;
-          </div>
+          <Link key={link.id} className="link" path={link.path}>
+            {link.name}
+          </Link>
         ))}
       </div>
     </div>
