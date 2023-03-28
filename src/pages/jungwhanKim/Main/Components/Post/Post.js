@@ -9,6 +9,7 @@ const Post = ({
   verified,
   postImg,
   content,
+  createdAt,
 }) => {
   // 댓글 섹션에 맵핑할 댓글 배열 선언
   const [comments, setComments] = useState([]);
@@ -126,7 +127,7 @@ const Post = ({
           />
         ))}
       </div>
-      <div className="time-posted">54분 전</div>
+      <div className="time-posted">{createdAt}</div>
       <div className="comment-input">
         {/* <!--댓글 입력창--> */}
         <form onSubmit={handleSubmit}>

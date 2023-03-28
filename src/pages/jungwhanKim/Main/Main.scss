@@ -43,7 +43,7 @@
 
         span {
           position: fixed;
-          width: 370px;
+          width: 320px;
         }
       }
     }
@@ -51,14 +51,11 @@
 
   @media (min-width: 1024px) {
     .container {
-      display: flex;
-      justify-content: space-between;
-
       .column-left {
         display: flex;
       }
       .column-right {
-        width: 350px;
+        width: 300px;
         margin-left: 36px;
         padding: 24px;
       }

@@ -137,7 +137,6 @@
   }
 
   .comments {
-    width: 600px;
     padding: 16px 0;
   }
 
@@ -194,12 +193,5 @@
       background-color: #1e90ff;
       color: white;
     }
-  }
-}
-
-@media (max-width: 760px) {
-  .post-img {
-    position: relative;
-    width: 100vw;
   }
 }

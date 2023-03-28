@@ -34,6 +34,7 @@ const Main = () => {
                 verified={post.verified}
                 postImg={post.postImg}
                 content={post.content}
+                createdAt={post.createdAt}
               />
             ))}
           </div>

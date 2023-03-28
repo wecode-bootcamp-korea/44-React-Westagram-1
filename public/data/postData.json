@@ -6,7 +6,8 @@
     "location": "Shibuya-ku, Tokyo",
     "verified": true,
     "postImg": "https://pbs.twimg.com/media/Fr6RYuWaAAAxOAE?format=jpg&name=large",
-    "content": "Shibuya WeWork vibes are impeccable!"
+    "content": "Shibuya WeWork vibes are impeccable!",
+    "createdAt": "20분 전"
   },
   {
     "id": 2,
@@ -15,6 +16,17 @@
     "location": "위워크 선릉 2호점",
     "verified": true,
     "postImg": "https://lh3.googleusercontent.com/p/AF1QipN5jTdxN41IAtfNpUaGS5mhcjbtiE1CVCbYxfkp=s680-w680-h510",
-    "content": "🌊🚢 44기는 오늘도 순항 중입니다! 🙌🙌🙌 ..."
+    "content": "🌊🚢 44기는 오늘도 순항 중입니다! 🙌🙌🙌 ...",
+    "createdAt": "48분 전"
+  },
+  {
+    "id": 3,
+    "account": "Storybook",
+    "profileImg": "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+    "location": "@storybookjs",
+    "verified": false,
+    "postImg": "https://pbs.twimg.com/card_img/1640459614499241984/AHIuIWjQ?format=png&name=small",
+    "content": "Today's the day: #StorybookDay is here! 🎉",
+    "createdAt": "15분 전"
   }
 ]
