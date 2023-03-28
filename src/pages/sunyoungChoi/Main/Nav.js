@@ -1,7 +1,10 @@
 import React from 'react';
-import Explor from '../../../assets/sunyoungChoi/explore.png';
-import Heart from '../../../assets/sunyoungChoi/heart.png';
-import Glass from '../../../assets/sunyoungChoi/profile.png';
+import {
+  IoLogoInstagram,
+  IoNavigateCircleOutline,
+  IoHeartOutline,
+  IoPersonOutline,
+} from 'react-icons/io5';
 import './Nav.scss';
 
 function Nav() {
@@ -9,7 +12,7 @@ function Nav() {
     <div className="nav-wrap">
       <nav>
         <div className="logo-box">
-          <i className="fa-brands fa-instagram" />
+          <IoLogoInstagram className="logo-icon" />
           <p className="logo">Westargram</p>
         </div>
         <div className="search-box">
@@ -17,9 +20,9 @@ function Nav() {
           <i className="fa-sharp fa-solid fa-magnifying-glass" />
         </div>
         <div className="inner-Menu">
-          <img className="menu-icon" src={Explor} alt="explore icon" />
-          <img className="menu-icon" src={Heart} alt="heart icon" />
-          <img className="menu-icon" src={Glass} alt="profile icon" />
+          <IoNavigateCircleOutline className="nav-icon" />
+          <IoHeartOutline className="nav-icon" />
+          <IoPersonOutline className="nav-icon" />
         </div>
       </nav>
     </div>

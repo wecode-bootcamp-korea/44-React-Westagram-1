@@ -1,8 +1,11 @@
 .comment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   .comment-wrap {
     display: flex;
-    align-items: center;
-    justify-content: left;
+    // justify-content: left;
     margin-top: 10px;
   }
 
@@ -14,6 +17,7 @@
 
   .comment-text {
     flex-grow: 1;
+    margin-left: 60px;
     font-size: 15px;
   }
 
@@ -21,5 +25,24 @@
   .comment-text {
     display: flex;
     align-items: center;
+  }
+
+  .remove-comment,
+  .like-icon {
+    padding: 0 3px;
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+  }
+
+  .like-icon {
+    padding: 0 3px;
+    border: none;
+  }
+
+  .remove-comment:hover {
+    padding: 0 3px;
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+    color: red;
   }
 }

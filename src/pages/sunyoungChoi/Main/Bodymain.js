@@ -3,6 +3,13 @@ import React from 'react';
 import Img from '../../../assets/sunyoungChoi/mountain.jpg';
 import ProfileBox from './ProfileBox';
 import CommentBox from '../Main/act/CommentBox';
+import {
+  IoBookmarkOutline,
+  IoChatbubbleOutline,
+  IoHeartOutline,
+  IoShareOutline,
+  IoEllipsisHorizontalSharp,
+} from 'react-icons/io5';
 import './Bodymain.scss';
 
 function Bodymain() {
@@ -12,7 +19,9 @@ function Bodymain() {
         <article className="feeds-contents-wrap">
           <div className="feeds-top">
             <ProfileBox />
-            <p className="dot">...</p>
+            <div>
+              <IoEllipsisHorizontalSharp className="dot" />
+            </div>
           </div>
           <div className="feeds-contents">
             <img className="contents-img" src={Img} alt="피드 이미지" />
@@ -20,18 +29,18 @@ function Bodymain() {
           <div className="contents-btn">
             <form>
               <button>
-                <i className="fa-regular fa-heart" />
+                <IoHeartOutline className="feeds-icon" />
               </button>
               <button>
-                <i className="fa-regular fa-comment" />
+                <IoChatbubbleOutline className="feeds-icon" />
               </button>
               <button>
-                <i className="fa-solid fa-arrow-up-right-from-square" />
+                <IoShareOutline className="feeds-icon" />
               </button>
             </form>
             <form>
               <button>
-                <i className="fa-regular fa-bookmark" />
+                <IoBookmarkOutline className="feeds-icon" />
               </button>
             </form>
           </div>
