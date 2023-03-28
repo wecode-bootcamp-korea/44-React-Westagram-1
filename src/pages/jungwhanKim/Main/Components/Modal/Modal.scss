@@ -34,28 +34,18 @@
   .modal-row {
     @include alignCenter;
     padding: 4px 0;
+
+    .icon-profile {
+      @include iconSize;
+    }
   }
 
-  .modal-icon-profile {
-    @include fullBgImage('../../../../../assets/jungwhanKim/modal-profile.png');
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+  .icon-saved {
+    @include iconSize;
   }
 
-  .modal-icon-saved {
-    @include fullBgImage('../../../../../assets/jungwhanKim/bookmark.png');
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-size: 90%;
-  }
-
-  .modal-icon-settings {
-    @include fullBgImage('../../../../../assets/jungwhanKim/setting.png');
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+  .icon-settings {
+    @include iconSize;
   }
 
   .modal-text {

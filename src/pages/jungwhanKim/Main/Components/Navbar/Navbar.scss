@@ -79,29 +79,19 @@
   }
 
   .explore {
-    width: 30px;
-    height: 30px;
+    @include iconSize;
     margin-right: 12px;
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90%;
   }
 
   .heart {
-    width: 30px;
-    height: 30px;
+    @include iconSize;
     margin-right: 12px;
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90%;
   }
 
   .my {
     width: 30px;
     height: 30px;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 50%;
     background-image: url('../../../../../assets/jungwhanKim/profile_hat.jpg');
     background-repeat: no-repeat;

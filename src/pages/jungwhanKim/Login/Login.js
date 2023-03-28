@@ -58,48 +58,52 @@ const Login = () => {
 
   return (
     <div className="page-container">
-      <div>
-        <div className="login-wrapper">
-          <div className="logo-wrapper">
-            <div className="wecode-logo" />
+      <div className="page-content-wrapper">
+        <span>
+          <div className="login-wrapper">
+            <div className="logo-wrapper">
+              <div className="wecode-logo" />
+            </div>
+            <div className="text-logo">westagram</div>
           </div>
-          <div className="text-logo">westagram</div>
-        </div>
-        <div className="input-wrapper">
-          <form onSubmit={handleSubmit}>
-            <input
-              name="username"
-              id="idInput"
-              type="text"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-              onInput={saveUserId}
-            />
-            <input
-              name="password"
-              id="pwInput"
-              type="password"
-              placeholder="비밀번호"
-              onInput={saveUserId}
-            />
-            {/* <!--로그인 버튼 요소--> */}
+          <div className="input-wrapper">
+            <form onSubmit={handleSubmit}>
+              <input
+                name="username"
+                id="idInput"
+                type="text"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+                onInput={saveUserId}
+              />
+              <input
+                name="password"
+                id="pwInput"
+                type="password"
+                placeholder="비밀번호"
+                onInput={saveUserId}
+              />
+              {/* <!--로그인 버튼 요소--> */}
 
-            <button
-              name="login"
-              id="login"
-              // username or passowrd 값이 없을 시 disabled 클래스 부여
-              className={!username || password < 6 ? 'login disabled' : 'login'}
-              // username or passowrd 값이 없을 시 disabled attribute 추가
-              disabled={!username || !password}
-            >
-              로그인
-            </button>
-          </form>
-          <div className="link-wrapper">
-            <Link to="/" className="find-pw">
-              비밀번호를 잊으셨나요?
-            </Link>
+              <button
+                name="login"
+                id="login"
+                // username or passowrd 값이 없을 시 disabled 클래스 부여
+                className={
+                  !username || password < 6 ? 'login disabled' : 'login'
+                }
+                // username or passowrd 값이 없을 시 disabled attribute 추가
+                disabled={!username || !password}
+              >
+                로그인
+              </button>
+            </form>
+            <div className="link-wrapper">
+              <Link to="/" className="find-pw">
+                비밀번호를 잊으셨나요?
+              </Link>
+            </div>
           </div>
-        </div>
+        </span>
       </div>
     </div>
   );

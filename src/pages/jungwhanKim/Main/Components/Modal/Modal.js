@@ -1,4 +1,6 @@
 import React from 'react';
+import { CgProfile } from 'react-icons/cg';
+import { FiBookmark, FiSettings } from 'react-icons/fi';
 import './Modal.scss';
 
 const Modal = ({ handleCloseModal }) => {
@@ -9,15 +11,15 @@ const Modal = ({ handleCloseModal }) => {
         <div className="modal-box">
           <div className="modal-first-section">
             <div className="modal-row">
-              <div className="modal-icon-profile" />
+              <CgProfile className="icon-profile" />
               <div className="modal-text">프로필</div>
             </div>
             <div className="modal-row">
-              <div className="modal-icon-saved" />
+              <FiBookmark className="icon-saved" />
               <div className="modal-text">저장됨</div>
             </div>
             <div className="modal-row">
-              <div className="modal-icon-settings" />
+              <FiSettings className="icon-settings" />
               <div className="modal-text">설정</div>
             </div>
           </div>

@@ -36,3 +36,8 @@
   background-position: center center;
   background-size: cover;
 }
+
+@mixin iconSize {
+  width: 26px;
+  height: 26px;
+}

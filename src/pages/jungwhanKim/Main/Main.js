@@ -7,7 +7,6 @@ import ProfileSection from './Components/ProfileSection/ProfileSection';
 import Recommendation from './Components/Recommendation/Recommendation';
 import Story from './Components/Story/Story';
 import './Main.scss';
-import '../../../assets/jungwhanKim/wecode-logo.png';
 
 const Main = () => {
   const [postData, setPostData] = useState([]);

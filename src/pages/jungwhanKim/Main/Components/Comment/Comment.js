@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import './Comment.scss';
 
 const Comment = ({ content, handleLike, likedStatus, handleRemove }) => {
@@ -13,7 +14,12 @@ const Comment = ({ content, handleLike, likedStatus, handleRemove }) => {
           onClick={handleLike}
           className={likedStatus ? 'comment-like-clicked' : 'comment-like'}
         />
-        <div onClick={handleRemove} className="deleteBtn">
+        {likedStatus ? (
+          <FaHeart className="comment-like-clicked" onClick={handleLike} />
+        ) : (
+          <FaRegHeart className="comment-like" onClick={handleLike} />
+        )}
+        <div onClick={handleRemove} className="delete-btn">
           삭제
         </div>
       </div>

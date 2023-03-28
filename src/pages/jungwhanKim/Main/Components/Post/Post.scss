@@ -51,12 +51,7 @@
   }
 
   .article-menu {
-    @include fullBgImage(
-      'https://cdn.icon-icons.com/icons2/1659/PNG/512/3844444-dot-menu-more-option_110318.png'
-    );
-    width: 24px;
-    height: 24px;
-    opacity: 0.5;
+    @include iconSize;
   }
 
   .post-img {
@@ -67,55 +62,34 @@
   }
 
   .third-row {
-    justify-content: space-between;
+    @include alignedSpaceBetween;
     padding: 16px 0;
-    @include alignCenter;
+    font-size: 28px;
   }
 
   .like {
-    @include fullBgImage(
-      'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png'
-    );
-    width: 26px;
-    height: 26px;
+    @include iconSize;
     margin-right: 14px;
   }
 
   .like-clicked {
-    @include fullBgImage(
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDqTa_wtBJdpn36-FlcXZUYclvCGgGkh1LmQ&usqp=CAU'
-    );
-    width: 26px;
-    height: 26px;
+    @include iconSize;
     margin-right: 14px;
+    color: $heart-red;
   }
 
-  .comment-img {
-    @include fullBgImage(
-      '../../../../../assets/jungwhanKim/instagram-comment-icon.png'
-    );
-    width: 26px;
-    height: 26px;
+  .comment-icon {
+    @include iconSize;
     margin-right: 14px;
-    background-size: 90%;
+    margin-left: 3px;
   }
 
-  .share-img {
-    @include fullBgImage(
-      '../../../../../assets/jungwhanKim/instagram-share-icon.png'
-    );
-    width: 26px;
-    height: 26px;
-    background-size: 90%;
+  .share-icon {
+    @include iconSize;
   }
 
-  .save-img {
-    @include fullBgImage(
-      '../../../../../assets/jungwhanKim/PikPng.com_ig-icon-png_1255467.png'
-    );
-    width: 24px;
-    height: 26px;
-    background-size: 90%;
+  .save-icon {
+    @include iconSize;
   }
 
   .account-pic-sm {

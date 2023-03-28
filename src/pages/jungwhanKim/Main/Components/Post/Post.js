@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Comment from '../Comment/Comment';
+import { FaHeart, FaRegHeart, FaRegComment } from 'react-icons/fa';
+import { FiMoreHorizontal } from 'react-icons/fi';
+import { HiOutlinePaperAirplane, HiOutlineBookmark } from 'react-icons/hi';
 import './Post.scss';
 
 const Post = ({
@@ -16,6 +19,8 @@ const Post = ({
 
   // 포스트 댓글 게시 인풋창 상태값 및 변경용 훅 정의
   const [inputValue, setInputValue] = useState('');
+
+  const [postLiked, setPostLiked] = useState(false);
 
   // 댓글 게시 입력창 이벤트 핸들러
   const handleComment = event => {
@@ -42,7 +47,7 @@ const Post = ({
   };
 
   // 좋아요 하트를 누르면 호출
-  const handleToggleLike = id => {
+  const handleCommentLike = id => {
     //각 댓글의 id를 인자로 받아와서
     setComments(
       comments?.map(comment =>
@@ -58,6 +63,10 @@ const Post = ({
     // newComments라는 comments의 상태값을 복사한 배열을 생성, 이후 매핑하여 클릭했던 아이템의 id와 맵핑 중인 객체의 id가 일치하지 않은 아이템들만 filter
     const newComments = comments.filter(item => id !== item.id);
     setComments(newComments);
+  };
+
+  const handlePostLike = () => {
+    setPostLiked(!postLiked);
   };
 
   return (
@@ -79,7 +88,7 @@ const Post = ({
             <div className="account-name-sub">{location}</div>
           </div>
         </div>
-        <div className="article-menu" />
+        <FiMoreHorizontal className="article-menu" />
       </div>
       {/* <!--포스트 사진--> */}
       <div
@@ -88,14 +97,19 @@ const Post = ({
           backgroundImage: `url(${postImg})`,
         }}
       />
-      {/* <!--3번째 로우/하트, 공유 기능들--> */}
+      {/* <!--3번째 로우/ 아이콘들 */}
       <div className="third-row">
         <div className="align-center">
-          <div className="like-clicked" />
-          <div className="comment-img" />
-          <div className="share-img" />
+          {postLiked ? (
+            <FaHeart className="like-clicked" onClick={handlePostLike} />
+          ) : (
+            <FaRegHeart className="like" onClick={handlePostLike} />
+          )}
+          <FaRegComment className="comment-icon" />
+          {/* <TbShare2 /> */}
+          <HiOutlinePaperAirplane className="share-icon" />
         </div>
-        <div className="save-img" />
+        <HiOutlineBookmark className="save-icon" />
       </div>
       {/* <!--4번째 로우/포스트 라이크 상태--> */}
       <div className="align-center">
@@ -121,7 +135,7 @@ const Post = ({
           <Comment
             key={comment.id}
             content={comment.content}
-            handleLike={() => handleToggleLike(comment.id)}
+            handleLike={() => handleCommentLike(comment.id)}
             likedStatus={comment.liked}
             handleRemove={() => handleRemove(comment.id)}
           />
