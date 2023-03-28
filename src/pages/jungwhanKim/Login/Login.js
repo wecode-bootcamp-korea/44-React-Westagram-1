@@ -88,9 +88,7 @@ const Login = () => {
                 name="login"
                 id="login"
                 // username or passowrd 값이 없을 시 disabled 클래스 부여
-                className={
-                  !username || password < 6 ? 'login disabled' : 'login'
-                }
+                className={!username || !password ? 'login disabled' : 'login'}
                 // username or passowrd 값이 없을 시 disabled attribute 추가
                 disabled={!username || !password}
               >
