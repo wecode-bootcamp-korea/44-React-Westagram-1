@@ -10,12 +10,12 @@ const CommentItem = ({ id, comment, removeComment }) => {
         <div className="comment-id">No.{id}</div>
         <div className="comment-text"> {comment}</div>
       </div>
-      <div>
+      <div className="button-wrap">
         <button className="like-icon">
-          <IoHeartOutline />
+          <IoHeartOutline className="icon" />
         </button>
         <button className="remove-comment" onClick={() => removeComment(id)}>
-          <IoCloseSharp />
+          <IoCloseSharp className="icon" />
         </button>
       </div>
     </div>

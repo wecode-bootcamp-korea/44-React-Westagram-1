@@ -16,7 +16,7 @@ import './CommentList.scss';
 const CommentList = ({ commentValue, removeComment }) => {
   return (
     <div className="comment-list">
-      {commentValue.map(comment => (
+      {commentValue?.map(comment => (
         <React.Fragment key={comment.key}>
           <CommentItem
             id={comment.key}

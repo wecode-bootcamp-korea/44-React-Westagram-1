@@ -1,4 +1,5 @@
 .body-main {
+  margin-top: 30px;
   img {
     object-fit: cover;
   }
@@ -11,7 +12,7 @@
   .feeds-contents-wrap {
     width: 500px;
     height: auto;
-    margin: 40px 10px 0 0;
+    margin: 40px 30px 0 0;
     border: 1px solid gray;
     border-radius: 5px;
   }
@@ -35,6 +36,11 @@
   }
 
   .user-name {
+    font-size: 15px;
+  }
+
+  .user-feed {
+    margin: 10px 20px;
     font-size: 15px;
   }
 

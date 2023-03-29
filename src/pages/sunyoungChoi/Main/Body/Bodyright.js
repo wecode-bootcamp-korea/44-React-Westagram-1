@@ -39,16 +39,17 @@ function Bodyright() {
             <ProfileBox />
           </div>
         </div>
-      </div>
-
-      <div className="right-footer">
-        <div className="footer-text-box">
-          <p className="footer-text"> Westargram </p>
-          {FOOTER.map(info => (
-            <p className="footer-text">{info.name}</p>
-          ))}
+        <div className="right-footer">
+          <div className="footer-text-box">
+            <p className="footer-text"> Westargram </p>
+            {FOOTER.map(info => (
+              <p className="footer-text" key={info.id}>
+                {info.name}
+              </p>
+            ))}
+            <p className="footer-text">©2023 WESTARGRAM</p>
+          </div>
         </div>
-        <p className="footer-text">©2023 WESTARGRAM</p>
       </div>
     </div>
   );
