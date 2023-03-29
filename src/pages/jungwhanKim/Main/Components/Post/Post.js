@@ -13,6 +13,7 @@ const Post = ({
   postImg,
   content,
   createdAt,
+  handleRemovePost,
 }) => {
   // 댓글 섹션에 맵핑할 댓글 배열 선언
   const [comments, setComments] = useState([]);
@@ -60,7 +61,6 @@ const Post = ({
   };
 
   const handleRemove = id => {
-    // newComments라는 comments의 상태값을 복사한 배열을 생성, 이후 매핑하여 클릭했던 아이템의 id와 맵핑 중인 객체의 id가 일치하지 않은 아이템들만 filter
     const newComments = comments.filter(item => id !== item.id);
     setComments(newComments);
   };
@@ -68,10 +68,8 @@ const Post = ({
   const handlePostLike = () => {
     setPostLiked(!postLiked);
   };
-
   return (
     <div className="post">
-      {/* <!--포스트 첫번째 로우--> */}
       <div className="article-top">
         <div className="align-center">
           <div
@@ -88,16 +86,14 @@ const Post = ({
             <div className="account-name-sub">{location}</div>
           </div>
         </div>
-        <FiMoreHorizontal className="article-menu" />
+        <FiMoreHorizontal onClick={handleRemovePost} className="article-menu" />
       </div>
-      {/* <!--포스트 사진--> */}
       <div
         className="post-img"
         style={{
           backgroundImage: `url(${postImg})`,
         }}
       />
-      {/* <!--3번째 로우/ 아이콘들 */}
       <div className="third-row">
         <div className="align-center">
           {postLiked ? (
@@ -106,12 +102,10 @@ const Post = ({
             <FaRegHeart className="like" onClick={handlePostLike} />
           )}
           <FaRegComment className="comment-icon" />
-          {/* <TbShare2 /> */}
           <HiOutlinePaperAirplane className="share-icon" />
         </div>
         <HiOutlineBookmark className="save-icon" />
       </div>
-      {/* <!--4번째 로우/포스트 라이크 상태--> */}
       <div className="align-center">
         <div className="account-pic-sm" />
         <div className="post-status-msg">
@@ -119,19 +113,16 @@ const Post = ({
           <span className="bolded">외 124명</span>이 좋아합니다
         </div>
       </div>
-      {/* dummy comment below */}
       <div className="dummy-comment">
         <div className="align-center">
           <div className="bolded">{account}&nbsp;</div>
           <div className="content-wrapper">
             <p>{content}</p>
-            {/* <div className="see-more">더 보기</div> */}
           </div>
         </div>
       </div>
       <div className="comments">
-        {/* <!--Comment components will be mapped below--> */}
-        {comments.map((comment, i) => (
+        {comments.map(comment => (
           <Comment
             key={comment.id}
             content={comment.content}
@@ -143,7 +134,6 @@ const Post = ({
       </div>
       <div className="time-posted">{createdAt}</div>
       <div className="comment-input">
-        {/* <!--댓글 입력창--> */}
         <form onSubmit={handleSubmit}>
           <input
             name="comment"
@@ -152,7 +142,6 @@ const Post = ({
             onInput={handleComment}
             value={inputValue}
           />
-          {/* <!--게시 버튼--> */}
           <button className="add-button">게시</button>
         </form>
       </div>

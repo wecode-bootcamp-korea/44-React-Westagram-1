@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineFileAdd } from 'react-icons/ai';
 import Box from './Components/Box/Box';
 import Links from './Components/Links/Links';
 import Navbar from './Components/Navbar/Navbar';
@@ -7,9 +8,11 @@ import ProfileSection from './Components/ProfileSection/ProfileSection';
 import Recommendation from './Components/Recommendation/Recommendation';
 import Story from './Components/Story/Story';
 import './Main.scss';
+import Upload from './Upload';
 
 const Main = () => {
   const [postData, setPostData] = useState([]);
+  const [uploadingMode, setUploadingMode] = useState(false);
 
   useEffect(() => {
     fetch('/data/postData.json')
@@ -17,13 +20,37 @@ const Main = () => {
       .then(data => setPostData(data));
   }, []);
 
+  const handleUploadToggle = () => {
+    setUploadingMode(!uploadingMode);
+  };
+
+  const handleRemovePost = id => {
+    const updatedPostData = postData.filter(post => id !== post.id);
+    setPostData(updatedPostData);
+  };
+
   return (
     <div className="main">
+      {uploadingMode ? (
+        <Upload
+          postData={postData}
+          setPostData={setPostData}
+          setUploadingMode={setUploadingMode}
+        />
+      ) : (
+        <></>
+      )}
       <div className="container">
         {/* <!--내비게이션 바--> */}
         <Navbar />
         <div className="column-left">
           <div>
+            <button onClick={handleUploadToggle} className="upload-btn">
+              <div className="align-center">
+                <AiOutlineFileAdd className="upload-icon" />
+                <div>New Post</div>
+              </div>
+            </button>
             {postData?.map(post => (
               <Post
                 key={post.id}
@@ -34,6 +61,7 @@ const Main = () => {
                 postImg={post.postImg}
                 content={post.content}
                 createdAt={post.createdAt}
+                handleRemovePost={() => handleRemovePost(post.id)}
               />
             ))}
           </div>

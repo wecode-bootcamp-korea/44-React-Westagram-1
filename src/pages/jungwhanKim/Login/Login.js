@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 
@@ -9,6 +9,12 @@ const Login = () => {
     password: '',
   });
 
+  // useEffect(() => {
+  //   fetch('https://westagram-signup.herokuapp.com/signup')
+  //     .then(response => response.json())
+  //     .then(result => console.log(result));
+  // }, []);
+
   // 분해 구조 할당으로 각 인풋값 추출
   const { username, password } = inputs;
 
@@ -16,7 +22,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   // 인풋창에 input 이벤트 발생 시 호출되는 함수
-  const saveUserId = event => {
+  const handleInput = event => {
     // 이벤트 타겟 인풋에서의 값과 해당 인풋의 이름을 추출
     const { value, name } = event.target;
 
@@ -73,14 +79,14 @@ const Login = () => {
                 id="idInput"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onInput={saveUserId}
+                onInput={handleInput}
               />
               <input
                 name="password"
                 id="pwInput"
                 type="password"
                 placeholder="비밀번호"
-                onInput={saveUserId}
+                onInput={handleInput}
               />
               {/* <!--로그인 버튼 요소--> */}
 
