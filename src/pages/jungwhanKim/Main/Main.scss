@@ -41,6 +41,10 @@
     }
   }
 
+  .column-right {
+    margin-top: 60px;
+  }
+
   @media (min-width: 320px) {
     .container {
       width: 90vw;
@@ -57,19 +61,26 @@
 
   @media (min-width: 760px) {
     .container {
+      display: flex;
+      justify-content: center;
       width: 80vw;
-      margin: 0 auto;
 
-      .column-left {
-        display: block;
-        margin: 60px auto;
-      }
-      .column-right {
-        position: relative;
+      .column-wrapper {
+        display: flex;
 
-        span {
-          position: fixed;
-          width: 320px;
+        .column-left {
+          margin-right: 16px;
+        }
+        .column-right {
+          margin-left: 16px;
+
+          span {
+            position: fixed;
+            width: 320px;
+          }
+        }
+        .profile-section {
+          display: flex;
         }
       }
     }
@@ -82,11 +93,7 @@
       }
       .column-right {
         width: 300px;
-        margin-left: 36px;
         padding: 24px;
-      }
-      .profile-section {
-        display: flex;
       }
     }
   }

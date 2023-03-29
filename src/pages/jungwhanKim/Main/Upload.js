@@ -52,9 +52,6 @@ const Upload = ({ postData, setPostData, setUploadingMode }) => {
     setUploadingMode(false);
   };
 
-  console.log('POSTDATA: ', postData);
-  console.log(uploadData);
-
   return (
     <div className="upload">
       <div className="upload-wrapper">

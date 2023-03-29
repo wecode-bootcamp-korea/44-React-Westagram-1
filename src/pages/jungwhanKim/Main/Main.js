@@ -26,7 +26,11 @@ const Main = () => {
 
   const handleRemovePost = id => {
     const updatedPostData = postData.filter(post => id !== post.id);
-    setPostData(updatedPostData);
+    if (window.confirm('정말 삭제하시겠습니까?')) {
+      setPostData(updatedPostData);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -42,30 +46,31 @@ const Main = () => {
       )}
       <div className="container">
         {/* <!--내비게이션 바--> */}
-        <Navbar />
-        <div className="column-left">
-          <div>
-            <button onClick={handleUploadToggle} className="upload-btn">
-              <div className="align-center">
-                <AiOutlineFileAdd className="upload-icon" />
-                <div>New Post</div>
-              </div>
-            </button>
-            {postData?.map(post => (
-              <Post
-                key={post.id}
-                account={post.account}
-                profileImg={post.profileImg}
-                location={post.location}
-                verified={post.verified}
-                postImg={post.postImg}
-                content={post.content}
-                createdAt={post.createdAt}
-                handleRemovePost={() => handleRemovePost(post.id)}
-              />
-            ))}
+        <div className="column-wrapper">
+          <Navbar />
+          <div className="column-left">
+            <div>
+              <button onClick={handleUploadToggle} className="upload-btn">
+                <div className="align-center">
+                  <AiOutlineFileAdd className="upload-icon" />
+                  <div>New Post</div>
+                </div>
+              </button>
+              {postData?.map(post => (
+                <Post
+                  key={post.id}
+                  account={post.account}
+                  profileImg={post.profileImg}
+                  location={post.location}
+                  verified={post.verified}
+                  postImg={post.postImg}
+                  content={post.content}
+                  createdAt={post.createdAt}
+                  handleRemovePost={() => handleRemovePost(post.id)}
+                />
+              ))}
+            </div>
           </div>
-          {/* <!--우측 콜룸--> */}
           <div className="column-right">
             <span>
               <ProfileSection />
