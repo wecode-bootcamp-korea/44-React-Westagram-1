@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from './Nav';
-import Body from './Bodymain';
-import Bodyright from './Bodyright';
+import Nav from './Nav/Nav';
+import Body from './Body/Bodymain';
+import Bodyright from './Body/Bodyright';
 import './Main.scss';
 
 function Main() {

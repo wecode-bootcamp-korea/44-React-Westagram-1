@@ -1,17 +1,15 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-key */
 import React from 'react';
-import ProfileBox from './ProfileBox';
+import ProfileBox from '../ProfileBox';
+import { FOOTER } from './FOOTER';
 import './Bodyright.scss';
 
 function Bodyright() {
   return (
-    <div className="bodyright">
+    <div className="body-right">
       <div className="right-total-wrap">
         <div className="right-main-profile">
           <ProfileBox />
-          {/* <img className="user-img" src={Img} />
-          <p className="user-name">HappyDog^^</p> */}
         </div>
 
         <div className="right-top">
@@ -44,11 +42,13 @@ function Bodyright() {
       </div>
 
       <div className="right-footer">
-        <p className="right-footer-text">
-          Westargram
-          정보.지원.홍보센터.API.채용정보.개인정보처리방침.약관.디렉터리.프로필.해시태그.언어
-        </p>
-        <p className="right-footer-text">©2023 WESTARGRAM</p>
+        <div className="footer-text-box">
+          <p className="footer-text"> Westargram </p>
+          {FOOTER.map(info => (
+            <p className="footer-text">{info.name}</p>
+          ))}
+        </div>
+        <p className="footer-text">©2023 WESTARGRAM</p>
       </div>
     </div>
   );

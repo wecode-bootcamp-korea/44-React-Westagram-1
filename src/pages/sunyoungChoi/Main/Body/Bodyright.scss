@@ -1,4 +1,4 @@
-.bodyright {
+.body-right {
   .right-total-wrap {
     width: auto;
     height: 500px;
@@ -52,8 +52,9 @@
     color: gray;
   }
 
-  .right-footer-text {
-    margin: 10px 0;
+  .footer-text {
+    display: inline;
+    margin: 0;
     padding: 0 3px;
     font-size: 14px;
     font-weight: 500;

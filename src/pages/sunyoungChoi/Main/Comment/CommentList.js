@@ -11,7 +11,7 @@ import './CommentList.scss';
 //문제 발생!!유니크한 키값을 못받아오고 있는 상태,
 //map을 돌릴 key 값을 최상단에 입력,
 //mapping을 돌릴 키값을 부여했으나, 자식 컴포넌트 <CommentItem/>에서 사용하는 comment.key를 못가져옴,
-//자식 컴포넌트에는 id라는 이름을 부여해서 넘김.
+//자식 컴포넌트에는 id라는 다른 이름을 부여해서 넘김.
 
 const CommentList = ({ commentValue, removeComment }) => {
   return (

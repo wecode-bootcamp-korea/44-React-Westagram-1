@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import Img from '../../../assets/sunyoungChoi/mountain.jpg';
-import ProfileBox from './ProfileBox';
-import CommentBox from '../Main/act/CommentBox';
+import Img from '/Users/sun/Desktop/44-React-Westagram-1/src/assets/sunyoungChoi/mountain.jpg';
+import ProfileBox from '../ProfileBox';
+import CommentBox from '../Comment/CommentBox';
 import {
   IoBookmarkOutline,
   IoChatbubbleOutline,
