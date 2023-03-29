@@ -1,0 +1,59 @@
+.comment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .comment-wrap {
+    display: flex;
+  }
+
+  .comment-id {
+    width: 75px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .comment-text {
+    flex-grow: 1;
+    margin-left: 60px;
+    font-size: 15px;
+  }
+
+  .comment-id,
+  .comment-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .button-wrap {
+    text-align: center;
+  }
+
+  .icon {
+    margin-top: 5px;
+  }
+
+  .remove-comment,
+  .like-icon {
+    padding: 0 3px;
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+  }
+
+  .heart-icon {
+    // padding: 0 3px;
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+  }
+
+  .on-heart {
+    color: red;
+  }
+
+  .remove-comment:hover {
+    padding: 0 3px;
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+    color: red;
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "feedId": 1,
+    "userName": "jooah_so_cute",
+    "state": "봄이에요 봄",
+    "feedImage": "images/sunyoungChoi/mountain,.jpg",
+    "profileImage": "",
+    "like": { "likeUser": "spring_3", "likeCount": 26 },
+    "content": "벌써 4월!"
+  },
+  {
+    "feedId": 2,
+    "userName": "hungry_00",
+    "state": "집에 가는 길",
+    "feedImage": "images/sunyoungChoi/mountain,.jpg",
+    "profileImage": "",
+    "like": { "likeUser": "l_wana_goHome", "likeCount": 46 },
+    "content": "오늘도 막차?!"
+  },
+  {
+    "feedId": 3,
+    "userName": "zzz_00",
+    "state": "너무 피곤하다..",
+    "feedImage": "images/sunyoungChoi/mountain,.jpg",
+    "profileImage": "",
+    "like": { "likeUser": "always_zz", "likeCount": 23 },
+    "content": "너무 졸립구만😣"
+  }
+]
