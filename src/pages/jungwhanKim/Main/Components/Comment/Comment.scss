@@ -1,0 +1,44 @@
+@import '../../../../../styles/mixin';
+@import '../../../../../styles/variables';
+
+.comment {
+  @include alignedSpaceBetween;
+  padding: 4px 0;
+
+  font-size: 14px;
+
+  .see-more {
+    margin-left: 5px;
+    opacity: 0.6;
+  }
+
+  .comment-id {
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .comment-like {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    opacity: 0.5;
+  }
+
+  .comment-like-clicked {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    color: $heart-red;
+  }
+
+  .delete-btn {
+    transition: 0.3s;
+    color: rgb(145, 145, 145);
+    font-size: 12px;
+  }
+
+  .delete-btn:hover {
+    color: $heart-red;
+  }
+}

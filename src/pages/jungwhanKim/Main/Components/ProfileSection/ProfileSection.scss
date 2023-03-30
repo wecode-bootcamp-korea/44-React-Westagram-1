@@ -1,0 +1,36 @@
+@import '../../../../../styles/mixin';
+@import '../../../../../styles/variables';
+
+.profile-section {
+  @include alignCenter;
+
+  .profile-image {
+    @include fullBgImage('../../../../../assets/jungwhanKim/profile_hat.jpg');
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: yellow;
+  }
+
+  .profile-text {
+    @include alignedSpaceBetween;
+    width: 100%;
+    margin-left: 16px;
+
+    .profile-name {
+      @include headerText16Px;
+    }
+
+    .profile-subtext {
+      margin-top: 4px;
+      color: #7e7e7e;
+      font-size: 16px;
+    }
+
+    .switch {
+      color: $blue-common;
+      font-size: 14px;
+    }
+  }
+}

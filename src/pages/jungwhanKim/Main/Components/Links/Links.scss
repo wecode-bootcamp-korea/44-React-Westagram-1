@@ -1,0 +1,26 @@
+@import '../../../../../styles/mixin';
+
+.links {
+  @include flexCenter;
+  margin-top: 12px;
+  border-top: #dadada solid 1px;
+  border-radius: 5px;
+
+  .wrapper {
+    display: flex;
+    flex-flow: wrap;
+    padding: 12px 10px;
+    list-style-type: none;
+
+    .link {
+      padding: 4px;
+      color: #595959;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: pre;
+
+      &:last-child {
+      }
+    }
+  }
+}

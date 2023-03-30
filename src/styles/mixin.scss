@@ -1,0 +1,43 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin alignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin alignedSpaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin headerText16Px {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@mixin subtext12Px {
+  color: #7e7e7e;
+  font-size: 12px;
+}
+
+@mixin fullBgImage($url: '') {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin iconSize {
+  width: 26px;
+  height: 26px;
+}
